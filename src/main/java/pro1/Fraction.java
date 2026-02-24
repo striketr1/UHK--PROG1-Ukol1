@@ -1,8 +1,7 @@
 package pro1;
 
-import java.util.concurrent.atomic.AtomicLong;
-
 public class Fraction {
+
     private long numerator;
     private long denominator;
 
@@ -21,25 +20,23 @@ public class Fraction {
     }
 
     public static Fraction parse(String s) {
-        var result = new Fraction(0,1);
-        long numerator = 0;
-        long denominator = 0;
+        var result = new Fraction(0, 1);
+        long numerator;
+        long denominator;
         String[] split = s.split("\\+");
 
-        for (var p : split)
-        {
+        for (var p : split) {
             Fraction f;
-            if(p.contains("%"))
-            {
+            if (p.contains("%")) {
+
                 String n = p.replace("%", "").trim();
                 numerator = Long.parseLong(n);
                 f = new Fraction(numerator, 100);
-            }else
-            {
+            } else {
                 var parts = p.split("/");
-                numerator =  Long.parseLong(parts[0].trim());
+                numerator = Long.parseLong(parts[0].trim());
                 denominator = Long.parseLong(parts[1].trim());
-                f = new Fraction(numerator,denominator);
+                f = new Fraction(numerator, denominator);
             }
             result = result.add(f);
         }

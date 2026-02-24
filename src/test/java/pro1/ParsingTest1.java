@@ -1,12 +1,11 @@
-
 package pro1;
-import org.junit.jupiter.api.Assertions;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
-class ParsingTest1
-{
+
+class ParsingTest1 {
+
     @org.junit.jupiter.api.Test
-    void test()
-    {
+    void test() {
         assertEquals(
                 "2/5",
                 Fraction.parse("2/5").toString()
